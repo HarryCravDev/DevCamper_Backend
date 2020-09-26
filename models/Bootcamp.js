@@ -53,6 +53,7 @@ const BootcampSchema = new mongoose.Schema({
     city: String,
     state: String,
     zipcode: String,
+    state: String,
     country: String,
   },
   careers: {
@@ -116,6 +117,7 @@ BootcampSchema.pre("save", async function (next) {
     street: loc[0].street,
     city: loc[0].city,
     zipcode: loc[0].zipcode,
+    state: loc[0].stateCode,
     country: loc[0].country,
   };
   // Do not save to DB
